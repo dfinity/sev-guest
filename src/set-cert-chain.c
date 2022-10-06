@@ -15,22 +15,15 @@
 #include <linux/psp-sev.h>
 #include <cert-table.h>
 
-#ifdef HOST
-	#define  SNP_SET_EXT_CONFIG 10
-	#define  SNP_GET_EXT_CONFIG 11
-#else
-	#define  SNP_SET_EXT_CONFIG 55
-	#define  SNP_GET_EXT_CONFIG 56
-#endif
+#define  SNP_SET_EXT_CONFIG 10
+#define  SNP_GET_EXT_CONFIG 11
 
 
-#ifndef HOST
-struct sev_user_data_ext_snp_config {
-	uint64_t config_address;		/* In */
-	uint64_t certs_address;		/* In */
-	uint32_t certs_len;		/* In */
-};
-#endif
+// struct sev_user_data_ext_snp_config {
+// 	uint64_t config_address;		/* In */
+// 	uint64_t certs_address;		/* In */
+// 	uint32_t certs_len;		/* In */
+// };
 
 #ifndef PROG_NAME
 #define PROG_NAME	"sev-host-set-cert-chain"
